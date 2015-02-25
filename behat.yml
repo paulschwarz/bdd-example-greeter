@@ -1,0 +1,15 @@
+default:
+    suites:
+        domain:
+            contexts: [ DomainGreeterContext ]
+
+        web:
+            contexts: [ WebGreeterContext ]
+            filters:  { tags: 'web' }
+
+    extensions:
+        Behat\MinkExtension:
+            base_url: 'http://localhost:8000'
+            sessions:
+                default:
+                    goutte: ~
